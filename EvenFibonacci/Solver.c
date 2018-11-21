@@ -13,7 +13,9 @@ int main() {
 	printf("Example result: %d",sum);
 }
 
-
+/**
+* 1st solver uses recursion
+*/
 int solver(int n) {
 
 	int f[n+2] ;
@@ -29,4 +31,17 @@ int solver(int n) {
 	}
 	return f[n];
 
+}
+
+/**
+* 2nd solver uses for loop
+*/
+int solver2(int n) {
+	int fibOne = 0;
+	int fibTwo = 1;
+	int sum = 0;
+	for(int i =0; i < n; i++) {
+
+	}
+	return sum;
 }
