@@ -9,8 +9,9 @@
 int solver(int n);
 
 int main() {
-	solver(40000000);
-	printf("Example result: %d",sum);
+	//solver(40000000);
+	solver2(4000000);
+	//printf("Example result: %d",sum);
 }
 
 /**
@@ -29,6 +30,8 @@ int solver(int n) {
 			sum+=f[i];
 		}
 	}
+	printf("Sum: %d",sum);
+
 	return f[n];
 
 }
@@ -37,11 +40,20 @@ int solver(int n) {
 * 2nd solver uses for loop
 */
 int solver2(int n) {
-	int fibOne = 0;
+	int fibOne = 1;
 	int fibTwo = 1;
+	int fibN =0;
 	int sum = 0;
-	for(int i =0; i < n; i++) {
+	while(fibN <n) {
+		if(fibN%2==0) {
+			sum+=fibN;
+		}
+		printf("N: %d\n",fibN);
+		fibN=fibOne + fibTwo;
 
+		fibOne=fibTwo;
+		fibTwo=fibN;
 	}
+	printf("Sum: %d",sum);
 	return sum;
 }
